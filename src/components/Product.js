@@ -6,6 +6,7 @@ function Product({ title, price, image }) {
       <h1>Product</h1>
       <h2>{title}</h2>
       <p>{price}</p>
+      <img src={image} alt={title} />
     </div>
   );
 }
