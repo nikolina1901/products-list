@@ -4,6 +4,7 @@ import ProductList from "./components/ProductList";
 import React from "react";
 import axios from "axios";
 import ProductFiltering from "./components/ProductFiltering";
+import Product from "./components/Product";
 
 function App() {
   const [products, setProducts] = React.useState([]);
@@ -28,7 +29,7 @@ function App() {
         />
 
         <Route
-          path="/productfiltering/:id"
+          path="/product/:id"
           render={(props) => (
             <ProductFiltering {...props} products={products} />
           )}
