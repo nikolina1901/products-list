@@ -1,10 +1,9 @@
 import { Redirect, Route, Switch } from "react-router-dom";
 import "./App.css";
 import ProductList from "./components/ProductList";
-import ProductDetails from "./ProductDetails";
 import React from "react";
 import axios from "axios";
-import Product from "./components/Product";
+import ProductDetails from "./components/ProductDetails";
 
 function App() {
   const [products, setProducts] = React.useState([]);
@@ -25,12 +24,12 @@ function App() {
         <Route
           exact
           path="/product"
-          render={(props) => <ProductList products={products} />}
+          render={(props) => <ProductList {...props} products={products} />}
         />
 
         <Route
           path="/productdetails/:id"
-          render={(props) => <ProductDetails products={products} />}
+          render={(props) => <ProductDetails {...props} products={products} />}
         />
         <Redirect to="/product" />
       </Switch>
