@@ -3,7 +3,7 @@ import "./App.css";
 import ProductList from "./components/ProductList";
 import React from "react";
 import axios from "axios";
-import ProductDetails from "./components/ProductDetails";
+import ProductFiltering from "./components/ProductFiltering";
 
 function App() {
   const [products, setProducts] = React.useState([]);
@@ -28,8 +28,10 @@ function App() {
         />
 
         <Route
-          path="/productdetails/:id"
-          render={(props) => <ProductDetails {...props} products={products} />}
+          path="/productfiltering/:id"
+          render={(props) => (
+            <ProductFiltering {...props} products={products} />
+          )}
         />
         <Redirect to="/product" />
       </Switch>
