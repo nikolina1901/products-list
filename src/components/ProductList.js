@@ -2,9 +2,9 @@ import axios from "axios";
 import React from "react";
 import Product from "./Product";
 
-function ProductList({ products }) {
-  const mapProducts = products.map((product) => (
-    <Product key={product.id} {...product} />
+function ProductList(props) {
+  const mapProducts = props.products.map((product) => (
+    <Product key={product.id} {...product} {...props} />
   ));
   return <div>{mapProducts}</div>;
 }
